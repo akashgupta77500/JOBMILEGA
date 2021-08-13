@@ -1,0 +1,125 @@
+{% load static %}
+{% block body %}
+{% include 'navigation.html' %}
+
+
+<html>
+<head>
+
+<title>SIGNUP/LOGIN</title>
+
+    <!--BOOTSTRAP use krne ke lie link-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--Font Awsm ke use krne ke lie link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body{
+      background-color:black;
+      background-position:center;
+      background-size: cover
+      font-family: sans-sarif;
+      margin-top: 0px;
+      color:white;
+     }
+ </style>
+</head>
+
+
+
+<body>
+
+<marquee style="color:white">PLEASE LOGIN FIRST</marquee>
+
+
+<div class="row">
+
+
+
+        <!--Column2 start here-->
+    <div class="clo-3">
+     <div class="card" style="width:340px ; height:450px ; margin-left:500px; margin-top:10px;background-color:black" >
+  <div class="card-body" >
+
+  <!--create a form for login-->
+<div class="container mt-3">
+  <h2>RECRUITER LOGIN </h2>
+  <form method="post">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label >Email:</label>
+      <input type="email" class="form-control"  placeholder="Enter email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label>Password:</label>
+      <input type="password" class="form-control" placeholder="Enter password" name="pswd" required>
+    </div>
+      <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">RECRUITER PLEASE LOGIN</button>
+
+
+       {% ifequal error "no" %}
+      <script>
+          window.location = ('{% url 'latestjobpageforrecruiter' %}')
+      </script>
+      {% endifequal %}
+
+      {% ifequal error "yes" %}
+      <script>
+          alert("Invalid Credentials");
+          window.location = ('{% url 'recruiterlogin' %}')
+      </script>
+      {% endifequal %}
+  </form>
+
+
+</div>
+  <!--form end -->
+                    <!--forgot password and signup code start -->
+
+        <div class="container text-center">
+          <span>Need an account? </span>
+          <a href="{% url 'recruitersignup' %}">SIGNUP</a><br>
+           <a href="{% url 'password_reset' %}">Forgot Password ?</a>
+
+        </div>
+                    <!--forgot password and signup code end -->
+  </div>
+ </div>
+    </div>
+        <!--Column2 end here-->
+</div>
+
+</body>
+</html>
+
+{% endblock %}
+
+
+
+
+<head>
+
+
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="/static/main/img/fevicon.png" rel="icon">
+
+	<link href="/static/main/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/main/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/static/main/css/style.css" rel="stylesheet">
+
+
+

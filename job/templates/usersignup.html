@@ -1,0 +1,207 @@
+
+
+
+
+
+{% load static %}
+{% block body %}
+{% include 'navigation.html' %}
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>USERSIGNUP</title>
+
+    <!--BOOTSTRAP use krne ke lie link-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--Font Awsm ke use krne ke lie link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<marquee style="color:white">JOBMILEGA.ONLINE</marquee>
+
+<body>
+
+<br>
+
+<div class="row"  style="margin-left:430px">
+
+    <!--Column start here-->
+    <div class="clo-3">
+  <!--create a Card box-->
+     <div class="box" style="width:500px ; height:670px ; margin-left:10px; margin-top:2px">
+  <div class="card-body" >
+
+  <!--create a form for login-->
+<div class="container mt-2 ">
+
+
+    <div class="container text-center"  >
+        <div class="regform"><h1>USER SIGNUP</h1></div>
+   </div>
+    <br>
+  <form  method="post"  name="signup"   enctype="multipart/form-data" >
+      {% csrf_token %}
+      <div class="form-group">
+      <label>First Name:</label>
+      <input type="text" class="form-control"  method="post" placeholder="Enter First Name" name="fname" maxlength="12"required>
+      </div>
+
+     <div class="form-group">
+      <label>Last Name:</label>
+      <input type="text" class="form-control"  method="post" placeholder="Enter Last Name" name="lname"required>
+     </div>
+
+     <div class="form-group">
+        <label>Contact:</label>
+      <input type="text" class="form-control"  method="post" placeholder="Enter contact no." name="contact"required>
+     </div>
+
+      <div class="form-group">
+      <label>Profile Image:</label>
+      <input type="file" class="form-control"  method="post" placeholder="Enter Last Name" name="image" accept="image/*"required>
+     </div>
+
+
+     <div class="form-group">
+        <label>Email:</label>
+      <input type="email" class="form-control"  method="post" placeholder="Enter email" name="email"required>
+     </div>
+
+     <div class="form-group">
+      <label>Password:</label>
+      <input type="password" class="form-control"  method="post"  placeholder="Enter password" name="pswd"required>
+     </div>
+
+     <div class="form-group">
+      <label>Gender:</label>
+          <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline1" name="gender" class="custom-control-input" value="Male">
+              <label class="custom-control-label" for="customRadioInline1">Male</label>
+          </div>
+
+          <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline2" name="gender" class="custom-control-input" value="Female">
+              <label class="custom-control-label" for="customRadioInline2">Female</label>
+          </div>
+     </div>
+     <button type="submit">Submit</button>
+  </form>
+
+</div>
+      <!--form end -->
+
+      {% ifequal  error "no" %}
+      <script>
+          alert("SIGNUP SUCCESSFULLY")
+          window.location=('{% url 'login' %}')
+      </script>
+      {% endifequal %}
+
+       {% ifequal error "yes" %}
+      <script>
+          alert("Email already exist-Use different one")
+          window.location=('{% url 'usersignup' %}')
+      </script>
+      {% endifequal %}
+
+
+  </div>
+ </div>
+  <!--Card box end here-->
+    </div>
+
+     <!--Column end here-->
+
+</div>
+
+
+
+
+</body>
+</html>
+
+{% endblock  %}
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+
+   *{
+      margin:0;
+      padding:0;
+    }
+
+body{
+      background-image:url(static/images/1.jpg);
+      background-position:center;
+      background-size: cover
+      font-family: sans-sarif;
+      margin-top: 0px;
+      height: 900px;
+     }
+
+.regform{
+       width:500px;
+       background-color:rgb(255,0,0,0.6);
+       margin-left: -50px;
+       color:#FFFFFF;
+       padding:10px 0px 10px 0px;
+       text-align:center;
+       border-radius:15px 15px 0px 0px;
+       height: 70px;
+       margin-top: -30px;
+     }
+.box{
+       width:800px;
+       background-color:rgb(0,0,0,0.5);
+       margin-left: 275px;
+       height: 710px;
+       margin-top: 0px;
+       border-radius:15px 15px 15px 15px;
+       }
+button{
+       background-color:#3BAF9F;
+       display:block;
+       margin: 20px 0px 0px 20px
+       text-align:center;
+       border-radius: 12px;
+       border:2px solid #36664;
+       padding: 14px 110px;
+       outline:none;
+       color:white;
+       cursor:pointer;
+       transition:0.25px;
+       margin-left:-35px;
+       width:500px;
+
+ }
+ button:hover{
+        background-color: #5390F
+
+   }
+
+label{
+   color: white;
+   }
+
+
+</style>
+

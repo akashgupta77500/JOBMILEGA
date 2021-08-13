@@ -1,0 +1,84 @@
+<html>
+<head>
+    {% load static %}
+
+    <!--BOOTSTRAP use krne ke lie link-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--Font Awsm ke use krne ke lie link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <!--styling,font,color,background change when go to the link-->
+<style>
+.nav-link:hover
+    {
+    color:white !important;
+    font-weight:normal;
+    background-color: grey;
+    border-radius: 20px;
+
+    }
+</style>
+
+</head>
+<body>
+
+<!--Navigation Bar-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark"style="background-color:black">
+    <!--Navigation Bar content Brand image-->
+
+    <div class="col-sm-1 mt-0 " style="padding-right : 20% ">
+        <a href="{% url 'index'%}"><img src="static/images/LOGO.png" alt="jobmilega.online" style="width:200px; height:90px"></a>
+     </div>
+
+
+
+    <!--Navigation Bar content-->
+
+<ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'index'%}"><i class="fa fa-home mr-1 "></i>HOME</a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link active" href="{% url 'job'%}"><i class="fa fa-suitcase mr-1 "></i>LATEST JOB</a>
+    </li>
+  </ul>
+    <!-- Navigation bar content heading -->
+       <div class="col-sm-3 mt-0 text-center" style="margin-left:70px" >
+              <span style="font-weight:bold ; font-size:30px">
+                  <span style="color: White">WORK</span>
+                  <span style="color: White">FROM</span>
+                  <span style="color: White">HOME</span>
+              </span>
+        </div>
+
+    <!-- Social Media Link -->
+        <div class="col-sm-3 mt-0" style="padding-left : 5% ">
+            <span style="font-weight:bold ; font-size:30px ; color; Red">
+                <span style="color: White">
+
+                    <i> <a href="https://twitter.com/JOBMILEGAONLINE"class="fa fa-twitter pl-2" style="color: white"></a></i>
+                    <i> <a href=" https://www.linkedin.com/in/job-milega-936838218/"class="fa fa-linkedin pl-2" style="color: white"></a></i>
+                    <i> <a href="https://www.facebook.com/JOBMILEGA.ONLINE/"class="fa fa-facebook pl-2" style="color: white"></a></i>
+                    <i> <a href="https://www.instagram.com/jobmilega.online/"class="fa fa-instagram pl-2" style="color: white"></a></i>
+              </span>
+            </span>
+        </div>
+
+    <!-- Profile with image and data -->
+  <div class="card" style="width:100px ; height:80px ; margin-left:10px">
+  <div class="card-body" >
+    <a href="{% url 'login'%}" class="btn btn-primary stretched-link" >Login</a>
+
+  </div>
+ </div>
+
+
+</nav>
+
+</body>
+</html>

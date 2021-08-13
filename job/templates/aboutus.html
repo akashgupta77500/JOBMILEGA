@@ -1,0 +1,212 @@
+<!--BOTH THE LOGO START-->
+ <div class="col-sm-1 mt-0 " style="padding-right:20%:align:center">
+        <a href="{% url 'index'%}"><img src="static/images/LOGO.png" alt="jobmilega.online" style="width:220px; height:90px"></a>
+       <a  class="stretched-link"> <img class="card-img-top" style="width:170px; height:90px ; margin-left:920px ;border-radius:50%" src="static/images/log.png"></a>
+
+ </div>
+<!--BOTH THE LOGO END-->
+
+<!--3d effect-->
+    <div class="box" style="margin-left:0px;margin-top:-30px">
+  <div class="inner">
+     <span>jobmilega.online</span><br>
+
+  </div>
+  <div class="inner">
+     <span>jobmilega.online</span><br>
+  </div>
+</div>
+     <style>
+
+
+.box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color:white ;
+	margin-top:20px;
+}
+
+.box .inner {
+	width: 1000px;
+	height: 180px;
+	line-height: 200px;
+	font-size: 8em;
+	font-family: sans-serif;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.box .inner:first-child {
+	background-color: white;
+	color: darkred;
+	transform-origin: right;
+	transform: perspective(100px) rotateY(-10deg);
+}
+
+.box .inner:last-child {
+	background-color: white;
+	color: black;
+	transform-origin: left;
+	transform: perspective(100px) rotateY(10deg);
+}
+
+.box .inner span {
+	position: absolute;
+	animation: marquee 6s linear infinite;
+}
+
+.box .inner:first-child span {
+	animation-delay: 2.5s;
+	left: -100%;
+}
+
+@keyframes marquee {
+	from {
+		left: 100%;
+	}
+
+	to {
+		left: -100%;
+	}
+}
+
+
+</style>
+<!--3d effect-->
+<!--HEADINGS start-->
+<body>
+      <h1 style="text-align:center">ABOUT US</h1>
+      <h4 style="text-align:center;margin-top:px;">WELCOME TO JOBMILEGA.ONLINE,ONE OF THE LARGEST PROFESSIONAL PLATFORM FOR EMPLOY AND EMPLOYER.</h4>
+
+     <b> <h4 style="text-align:center">WE CONNECT PEOPLE WITH PROFESSIONALS WHICH LEADS TO THE GROWTH OF PERSONAL,ECONOMICAL,LOGICAL SKILLS TOWARDS THE SUCCESS.</h4></b>
+         <h1 style="text-align:center"><label>MISSION</label></h1>
+         <h4 style="text-align:center">THE MISSION OF JOBMILEGA.ONLINE: TO PROVIDE BEST OPPORTUNITY TO PROFESSIONALS  AND FRESHERS TO MAKE THEM MORE PRODUCTIVE AND SUCCESSFUL</h4>
+
+            <h1 style="text-align:center"><label>DETAILS</label></h1>
+
+<h4 style="text-align:center"> JOBMILEGA.ONLINE is an INDIAN business and employment-oriented online service that operates only via websites.It will be Launched on 15th Sep 2021, the platform is mainly used for professional networking, and allows job seekers to post their resume and employers to post jobs.</h4>
+
+</body>
+<!--HEADINGS end-->
+
+    <!--Footer BOX Start-->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 5px;
+}
+
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
+.fa {font-size:50px;}
+</style>
+</head>
+<div class="row" style=" margin-top:100px":>
+  <div class="column">
+    <div class="card">
+      <div class="col-sm-2 ml-5" style="margin-top:30px" >
+      <h3>GENERAL</h3><br>
+      <a href="{% url 'aboutus' %}"style="color:white">About Us</a><br><br>
+      <a href="{% url 'usersignup' %}"style="color:white">Jobseeker Signup</a><br><br>
+      <a href="{% url 'login' %}"style="color:white">Jobseeker login</a><br><br>
+      <a href="{% url 'recruitersignup' %}"style="color:white">Recruiter Signup</a><br><br>
+      <a href="{% url 'recruiterlogin' %}"style="color:white">Recruiter Login</a><br><br>
+    </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <div class="col-sm-2" style="margin-top:30px">
+      <h2>HELP</h2><br>
+      <a href="{% url 'aboutus' %}"style="color:white">Interview Question</a><br><br>
+      <p></p>
+      <a href="{% url 'aboutus' %}"style="color:white">Study Material</a><br><br>
+      <p></p>
+      <a href="{% url 'aboutus' %}"style="color:white">How this website work</a><br>
+       <p></p>
+      <a href="{% url 'recruiterlogin' %}"style="color:white">Career</a><br><br>
+
+    </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+    <div class="col-sm-2" style="margin-top:30px">
+      <h2>POLICY</h2><br>
+      <p></p>
+      <a href=""style="color:white">Term and conditions</a><br><br>
+      <p></p>
+      <a href=""style="color:white">How this website helps you?</a><br><br>
+      <p></p>
+       <a href=""style="color:white">Contribution</a><br><br>
+      <a href=""style="color:white">Report</a><br>
+
+
+    </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+     <div class="col-sm-3" style="margin-top:30px">
+      <h2> ADDRESS</h2><br>
+      <p> H-No-68, near Pragati Public School, GB Palya, Bengaluru, 841423, India</p>
+    </div>
+    <div class="col-sm-2" style="margin-top:30px">
+      <h2>E-MAIL</h2>
+        <h4></h4>
+      <h3>jobmilegaonline.com</h3>
+
+    </div>
+    </div>
+  </div>
+</div>
+    <!--Footer BOX END-->
+
+
+
+
+

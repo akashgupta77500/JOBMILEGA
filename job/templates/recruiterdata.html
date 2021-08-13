@@ -1,0 +1,146 @@
+<!-- Navigation BAR Start -->
+<html>
+<head>
+    {% load static %}
+
+    <!--BOOTSTRAP use krne ke lie link-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--Font Awsm ke use krne ke lie link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <!--styling,font,color,background change when go to the link-->
+<style>
+.nav-link:hover
+    {
+    color:white !important;
+    font-weight:normal;
+    background-color: Grey;
+    border-radius: 20px;
+
+    }
+</style>
+
+</head>
+<body>
+
+<!--Navigation Bar-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!--Navigation Bar content Brand image-->
+    <div class="col-sm-1 mt-0 " style="padding-right : 20% ">
+               <img src="static/images/LOGO.png" alt="jobmilega.online" style="width:200px; height:90px">
+        </div>
+
+<!-- Toggle Button -->
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+    <!--Navigation Bar content-->
+<ul class="navbar-nav" style="font-size:55px;margin-left:200px;font-weight:bold ">
+       <p style="color: White">RECRUITER DATA</p>
+    </ul>
+</nav>
+</body>
+</html>
+<!----Navigation BAR End -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RECRUITER-DATA</title>
+
+
+
+</head>
+
+
+
+
+<body>
+
+<marquee>ALL RECRUITER  DATA</marquee>
+
+
+
+ <!-- Table creations -->
+        <div class="container">
+          <table class="table table-hover" id="example">
+              <thead>
+                  <tr style="background-color: yellow">
+                      <th>Sr.No</th>
+                      <th>company</th>
+                      <th>HR Name</th>
+                      <th>E-Mail</th>
+                      <th>Contact</th>
+                      <th>Action</th>
+                      <th>Job Post</th>
+                  </tr>
+              </thead>
+
+              <tbody>
+                   {% for i in data %}
+                  <tr>
+                        <td>{{ forloop.counter}}</td>
+                        <td> {{ i.company}}</td>
+                       <td>  {{ i.user.first_name }} {{ i.user.last_name }}</td>
+                        <td> {{i.user.username }}</td>
+                        <td> {{ i.mobile}}</td>
+                        <td><a href="{% url 'delete_recruiter' i.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a></td>
+                        <td><a href="{% url 'postofeveryrecruiter' i.id  %}" class="btn btn-danger btn-sm">Job Post</a></td>
+
+                  </tr>
+                  {% endfor%}
+              </tbody>
+
+          </table>
+ </div>
+
+</body>
+</html>
+
+<!-- DATA TABLE KA CODE START (pagination,search bar,previous-next button,file download) -->
+
+<head>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+
+
+</head>
+
+<body>
+
+ <!-- Notes:- # represent id -->
+
+<script>
+$(document).ready(function() {
+
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
+
+</script>
+</body>
+
+ <!-- DATA TABLE KA CODE START END(pagination,search bar,previous-next button,file download) -->
+

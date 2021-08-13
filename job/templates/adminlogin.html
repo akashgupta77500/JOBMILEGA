@@ -1,0 +1,89 @@
+{% include 'navigation.html' %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADMINLOGIN</title>
+
+
+<title>ADMIN</title>
+
+    <!--BOOTSTRAP use krne ke lie link-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--Font Awsm ke use krne ke lie link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+  body{
+      background-color:black;
+      background-position:center;
+      background-size: cover
+      font-family: sans-sarif;
+      margin-top: 0px;
+      color:white
+     }
+ </style>
+
+</head>
+<body>
+
+<br>
+
+<div class="row"  style="margin-left:480px">
+
+    <!--Column start here-->
+    <div class="clo-3">
+     <div class="card" style="width:380px ; height:450px ; margin-left:10px; margin-top:10px;background-color:black;">
+  <div class="card-body" >
+  <!--create a form for login-->
+<div class="container mt-5">
+  <h2>ADMIN LOGIN </h2>
+    <form method="post">
+     {% csrf_token %}
+    <div class="form-group">
+      <label for="user-email">Email:</label>
+      <input type="email" class="form-control" id="user-email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="user-pwd">Password:</label>
+      <input type="password" class="form-control" id="user-pwd" placeholder="Enter password" name="pswd">
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width:313px"> BOSS PLEASE LOGIN</button>
+  </form>
+     {% ifequal error "no" %}
+      <script>
+          window.location = ('{% url 'bosspage' %}')
+      </script>
+     {% endifequal %}
+
+      {% ifequal error "yes" %}
+      <script>
+          alert("INVALID CREDENTIALS")
+          window.location=('{% url 'adminlogin' %}')
+      </script>
+      {% endifequal %}
+</div>
+  <!--form end -->
+  </div>
+ </div>
+    </div>
+     <!--Column end here-->
+
+</div>
+
+
+
+
+</body>
+</html>

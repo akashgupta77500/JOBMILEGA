@@ -1,0 +1,694 @@
+<head>
+    {% load static %}
+
+    <!--BOOTSTRAP use krne ke lie link-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--Font Awsm 5 and 4 doo ko use krne ke lie link-->
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <!--styling,font,color,background change when go to the link-->
+<style>
+
+     body{background-color: rgb(0,0,0,0.1);}
+
+</style>
+
+
+</head>
+
+<body>
+
+<!--Navigation Bar-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="width:60px;margin-left:60px;border-radius:0px 0px 100px 100px;margin-top:px">
+    <!--Navigation Bar content Brand image-->
+
+    <!--Navigation Bar content-->
+<ul class="navbar-nav">
+    <li class="nav-item" >
+      <a class="nav-link active" href="{% url 'latestjob' %}"><i class="fa fa-angle-double-left mr-1 " style="font-size:50px;margin-left:-10px; color: white"></i></a>
+     </li>
+</ul>
+</nav>
+</body>
+
+
+<br>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STATUS</title>
+
+<style>
+body{margin-top:0px;}
+
+.steps .step {
+    display: block;
+    width: 100%;
+    margin-bottom: 35px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.steps .step .step-icon-wrap {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    text-align: center
+}
+
+.steps .step .step-icon-wrap::before,
+.steps .step .step-icon-wrap::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 3px;
+    margin-top: -1px;
+    background-color: #e1e7ec;
+    content: '';
+    z-index: 1
+}
+
+.steps .step .step-icon-wrap::before {
+    left: 0
+}
+
+.steps .step .step-icon-wrap::after {
+    right: 0
+}
+
+.steps .step .step-icon {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #e1e7ec;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #374250;
+    font-size: 38px;
+    line-height: 81px;
+    z-index: 5
+}
+
+.steps .step .step-title {
+    margin-top: 16px;
+    margin-bottom: 0;
+    color: #606975;
+    font-size: 14px;
+    font-weight: 500
+}
+
+.steps .step:first-child .step-icon-wrap::before {
+    display: none
+}
+
+.steps .step:last-child .step-icon-wrap::after {
+    display: none
+}
+
+.steps .step.completed .step-icon-wrap::before,
+.steps .step.completed .step-icon-wrap::after {
+    background-color: #0da9ef
+}
+
+.steps .step.completed .step-icon {
+    border-color: #0da9ef;
+    background-color: #0da9ef;
+    color: #fff
+}
+
+@media (max-width: 576px) {
+    .flex-sm-nowrap .step .step-icon-wrap::before,
+    .flex-sm-nowrap .step .step-icon-wrap::after {
+        display: none
+    }
+}
+
+@media (max-width: 768px) {
+    .flex-md-nowrap .step .step-icon-wrap::before,
+    .flex-md-nowrap .step .step-icon-wrap::after {
+        display: none
+    }
+}
+
+@media (max-width: 991px) {
+    .flex-lg-nowrap .step .step-icon-wrap::before,
+    .flex-lg-nowrap .step .step-icon-wrap::after {
+        display: none
+    }
+}
+
+@media (max-width: 1200px) {
+    .flex-xl-nowrap .step .step-icon-wrap::before,
+    .flex-xl-nowrap .step .step-icon-wrap::after {
+        display: none
+    }
+}
+
+.bg-faded, .bg-secondary {
+    background-color: #f5f5f5 !important;
+}
+
+</style>
+
+
+<body>
+
+
+
+<!--single status part start-->
+{% for i in data1 %}
+
+      <a class="nav-link active" href="{% url 'userstatusbar' %}"><i class="fa fa-times-circle" style="font-size:30px; color:black;margin-left:1200px;"></i></a>
+
+<div class="container" style="width:1110px;background-color:rgb(255,255,255,0.9);margin-left: 120px;margin-top:-20px;box-shadow: 0px 0px; height:310px;padding: 15px;border-radius:90px 0px 90px 90px">
+
+      <h2 style="text-align:center">{{i.job.company}}</h2>
+      <p style="text-align:center">{{i.job.title}}</p>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+
+<div class="container padding-bottom-3x mb-1"style="margin-top:-160px">
+          <div class="card-body">
+            <div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between padding-top-2x padding-bottom-1x">
+             <!--11111111111-->
+              <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-rocket"></i></div>
+                </div>
+                <h4 class="step-title">APPLIED</h4>
+              </div>
+                <!--11111111111-->
+
+                   <!--22222222222-->
+          {% ifequal error 'none' %}
+              <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-look"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION VIEWED</h4>
+              </div>
+
+                 <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-lock"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION ACCEPTED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+
+                  <div class="step-icon" ><a href="#" data-toggle="tooltip" title="
+
+How To scheduled a Interview.
+
+1. Open G-Mail.
+2. Login through your mail id.
+3. You got a mail at the time which is reflecting on your dashboard when status of the job application is
+   Video Interview Scheduled
+4. Click on JOIN MEETING button which is associated with the mail.
+5. DONE
+
+"><i class="pe-7s-monitor" ></i> </a></div>
+                </div>
+                <h4 class="step-title" >VIDEO INTERVIEW SCHEDULED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-diamond"></i></div>
+                </div>
+                <h4 class="step-title">SELECTED</h4>
+              </div>
+
+                 <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-mail-open-file"></i></div>
+                </div>
+                <h4 class="step-title">JOINING LETTER</h4>
+              </div>
+               <!--22222222222-->
+              {% endifequal %}
+
+                <!--22222222222-->
+             {% ifequal error 'Application Viewed' %}
+              <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-look"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION VIEWED</h4>
+              </div>
+
+                  <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-lock"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION ACCEPTED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-monitor"></i></div>
+                </div>
+                <h4 class="step-title">VIDEO INTERVIEW SCHEDULED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-diamond"></i></div>
+                </div>
+                <h4 class="step-title">SELECTED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-mail-open-file"></i></div>
+                </div>
+                <h4 class="step-title">JOINING LETTER</h4>
+              </div>
+                {% endifequal %}
+               <!--22222222222-->
+
+               <!--33333333333-->
+                {% ifequal error 'Application Rejected' %}
+               <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-look"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION VIEWED</h4>
+              </div>
+
+              <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-close-circle"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION REJECTED</h4>
+              </div>
+
+                 <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-monitor"></i></div>
+                </div>
+                <h4 class="step-title">VIDEO INTERVIEW SCHEDULED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-diamond"></i></div>
+                </div>
+                <h4 class="step-title">SELECTED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-mail-open-file"></i></div>
+                </div>
+                <h4 class="step-title">JOINING LETTER</h4>
+              </div>
+
+                {% endifequal %}
+                <!--33333333333-->
+
+                <!--33333333333-->
+                {% ifequal error 'Application Accepted' %}
+              <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-look"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION VIEWED</h4>
+              </div>
+
+              <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-lock"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION ACCEPTED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-monitor"></i></div>
+                </div>
+                <h4 class="step-title">VIDEO INTERVIEW SCHEDULED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-diamond"></i></div>
+                </div>
+                <h4 class="step-title">SELECTED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-mail-open-file"></i></div>
+                </div>
+                <h4 class="step-title">JOINING LETTER</h4>
+              </div>
+                {% endifequal %}
+
+
+                <!--33333333333-->
+
+
+                <!--44444444444-->
+                {% ifequal error 'Video Interview Scheduled' %}
+                <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-look"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION VIEWED</h4>
+              </div>
+
+                <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-lock"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION ACCEPTED</h4>
+              </div>
+
+              <div class="step completed" style="margin-left:-160px">
+                <div class="step-icon-wrap">
+ <div class="step-icon" > <i class="pe-7s-monitor" data-toggle="tooltip" title="
+
+How To Join the Interview.
+
+1. Open G-Mail.
+2. Login through your mail id.
+3. You got a mail at the time which is reflecting on your dashboard when status of the job application is
+   Video Interview Scheduled
+4. Click on JOIN MEETING button which is associated with the mail.
+5. DONE
+
+"></i> </div>
+
+                </div>
+                <h4 class="step-title">VIDEO INTERVIEW SCHEDULED <br><br>
+                     <small>{{i.interviewdateaandtime}}</small>
+                    <!--3d effect-->
+    <div class="box" style="margin-left:0px;margin-top:0px">
+  <div class="inner">
+     <span>{{i.interviewdateaandtime}}</span>
+  </div>
+  <div class="inner">
+     <span>{{i.interviewdateaandtime}}</span>
+  </div>
+</div>
+
+                    <style>
+
+
+.box {
+	display: flex;
+}
+
+.box .inner {
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 4em;
+	font-family: sans-serif;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.box .inner:first-child {
+	background-color: indianred;
+	color: darkred;
+	transform-origin: right;
+	transform: perspective(100px) rotateY(-15deg);
+}
+
+.box .inner:last-child {
+	background-color: lightcoral;
+	color: antiquewhite;
+	transform-origin: left;
+	transform: perspective(100px) rotateY(15deg);
+}
+
+.box .inner span {
+	position: absolute;
+	animation: marquee 5s linear infinite;
+}
+
+.box .inner:first-child span {
+	animation-delay: 2.5s;
+	left: -100%;
+}
+
+@keyframes marquee {
+	from {
+		left: 100%;
+	}
+
+	to {
+		left: -100%;
+	}
+}
+</style>
+   <!--3d effect-->
+
+
+                </h4>
+              </div>
+
+                <div class="step " style="margin-left:-160px">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-diamond"></i></div>
+                </div>
+                <h4 class="step-title">SELECTED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-mail-open-file"></i></div>
+                </div>
+                <h4 class="step-title">JOINING LETTER</h4>
+              </div>
+                {% endifequal %}
+                <!--44444444444-->
+
+                <!--55555555555-->
+              {% ifequal error 'Selected' %}
+                 <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-look"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION VIEWED</h4>
+              </div>
+
+                <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-lock"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION ACCEPTED</h4>
+              </div>
+
+              <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-monitor"></i></div>
+                </div>
+                <h4 class="step-title">VIDEO INTERVIEW SCHEDULED</h4>
+              </div>
+
+                <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-diamond"></i></div>
+                </div>
+                <h4 class="step-title">SELECTED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-mail-open-file"></i></div>
+                </div>
+                <h4 class="step-title">JOINING LETTER</h4>
+              </div>
+
+               {% endifequal %}
+                <!--55555555555-->
+                 <!--55555555555-->
+              {% ifequal error 'Rejected' %}
+                 <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-look"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION VIEWED</h4>
+              </div>
+
+                <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-lock"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION ACCEPTED</h4>
+              </div>
+
+              <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-monitor"></i></div>
+                </div>
+                <h4 class="step-title">VIDEO INTERVIEW SCHEDULED</h4>
+              </div>
+
+                <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-close-circle"></i></div>
+                </div>
+                <h4 class="step-title">REJECTED</h4>
+              </div>
+
+                <div class="step ">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-mail-open-file"></i></div>
+                </div>
+                <h4 class="step-title">JOINING LETTER</h4>
+              </div>
+
+               {% endifequal %}
+                <!--55555555555-->
+
+                <!--66666666666-->
+                 {% ifequal error 'Joining Letter' %}
+                 <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-look"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION VIEWED</h4>
+              </div>
+
+                <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-lock"></i></div>
+                </div>
+                <h4 class="step-title">APPLICATION ACCEPTED</h4>
+              </div>
+
+              <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-monitor"></i></div>
+                </div>
+                <h4 class="step-title">VIDEO INTERVIEW SCHEDULED</h4>
+              </div>
+
+                <div class="step completed">
+                <div class="step-icon-wrap">
+                  <div class="step-icon"><i class="pe-7s-diamond"></i></div>
+                </div>
+                <h4 class="step-title">SELECTED</h4>
+              </div>
+
+                <div class="step completed">
+                <div class="step-icon-wrap">
+                    <div class="step-icon"><a href="{{ i.joiningletter.url }}" download style="color:white"><i class="pe-7s-mail-open-file"data-toggle="tooltip" data-placement="bottom" title="Click to Download"></i></a></div>
+                </div>
+                <h4 class="step-title">JOINING LETTER</h4>
+              </div>
+
+               {% endifequal %}
+                <!--66666666666-->
+
+            </div>
+          </div>
+        </div>
+    <b><p style="text-align: center;margin-top:-30px">Applied Date: <span>{{i.applied_date}}</span></p></b>
+</div>
+{% endfor %}
+
+<!--single status part end-->
+<br>
+
+<!--TABLE WITH DATA START-->
+        <div class="container" style="width:1500px;">
+          <table class="table table-hover" id="example">
+              <thead>
+                  <tr style="background-color: yellow">
+                      <th>Sr.No</th>
+                      <th>Company</th>
+                      <th>Job Position</th>
+                      <th>Resume</th>
+                      <th>Apllied Date</th>
+                   <!--    <th>Company Logo</th> -->
+                      <th>STATUS</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+
+              <tbody>
+                   {% for d in data %}
+                  <tr>
+                        <td>  {{ forloop.counter}}</td>
+                        <td>  {{ d.job.company }} </td>
+                        <td> {{d.job }}</td>
+                        <td><b><a href="{{ d.resume.url }}" download style="margin-left:5px;color:black">{{ d.resume}}</a></b></td>
+                        <td> {{ d.applied_date}}</td>
+                     <!--   <td> <img src="{{ d.job.recruiter.image.url}}" style="width:70px; height:70px" ></td> -->
+                        <td><a href="{% url 'singlestatus' d.id %}" type="submit" class="btn btn-warning btn-sm" >Status</a></td>
+                        <td><a href="{% url 'delete_apply' d.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a></td>
+
+                  </tr>
+                  {% endfor%}
+              </tbody>
+
+          </table>
+ </div>
+
+<!--TABLE WITH DATA END-->
+</body>
+<!--Extra functionality like search,pagination, download and copy the data-->
+
+<head>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+
+
+</head>
+
+<body>
+
+ <!-- Notes:- # represent id -->
+
+<script>
+$(document).ready(function() {
+
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
+
+</script>
+
+
+
+</body>
+
+
+
+

@@ -1,0 +1,108 @@
+
+<head>
+    {% load static %}
+
+    <!--BOOTSTRAP use krne ke lie link-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--Font Awsm ke use krne ke lie link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <!--styling,font,color,background change when go to the link-->
+<style>
+.nav-link:hover
+    {
+    color:white !important;
+    font-weight:normal;
+    background-color: Grey;
+    border-radius: 20px;
+
+    }
+</style>
+
+</head>
+
+
+
+
+
+
+{% for i in data %}
+  <!--Make a container as button start-->
+<head>
+    <style>
+      .link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .container {
+       cursor: pointer;
+       position: relative;
+      }
+
+     body{background-color: rgb(0,0,0,0.1);}
+
+
+
+    </style>
+  </head>
+<div class="container" style="width:800px;background-color:rgb(255,255,255,0.9);margin-left: 30px;margin-top: 20px;box-shadow: 0px 0px;  height: auto;padding: 15px;">
+    <a href="">
+
+      </a>
+    <!--Make a container as button end-->
+                      <h3> {{ i.company}}</h3>
+                      <p> {{ i.title}}</p>
+                      <p><i class="fa fa-clock-o mr-3 "></i>{{ i.start_date}}<small class="akash" style="margin-left:30px">To</small><i class="honey" style="margin-left:30px"></i>{{ i.end_date}}</p>
+                      <p><i class="fa fa-briefcase mr-3 "></i>{{ i.experience}}<i class="akash" style="margin-left:140px"></i> <i class="fa fa-map-marker mr-3 "></i>{{ i.location}}</p>
+                      <p> <i class="fa fa-money mr-3 " ></i>{{ i.salary }} {{ i.permonth }} <small class="akash" style="margin-left:200px">Posted Date--></small><small>{{ i.creationdate}}</small></p>
+                      <b class="akash">SKILL</b><p>{{ i.skill|linebreaks}} </p>
+                      <b class="akash">JOB DESCRIPTION</b><p>{{ i.description|linebreaks}}</p>
+
+               <form method="post">
+                   {% csrf_token %}
+                   <div style="display:none">
+                    <input value="{{ i.recruiter}}" name="recruiter">
+                   <input value="{{ i.company}}" name="company">
+                   <input value="{{ i.title}}" name="jobtitle">
+                   <input value="{{ i.start_date}}" name="startdate">
+                   <input value="{{ i.end_date}}" name="enddate">
+                   <input value="{{ i.experience}}" name="experience">
+                   <input value="{{ i.salary }}" name="salary">
+                   <input value="{{ i.permonth }}" name="permonth">
+                   <input value="{{ i.skill}}" name="skill">
+                   <input value="{{ i.location}}" name="location">
+                   <input value="{{ i.description}}" name="description">
+                       </div>
+                   <button type="submit" class="btn btn-success btn-sm">Applied For Paid Job</button>
+
+                </form>
+                      <a href="{% url 'delete_postbyadmin' i.id %}" class="btn btn-danger btn-sm" style="margin-left:670px;margin-top:-50px" onclick="return confirm('Are you sure?')"><td>{{ forloop.counter}}</td>-Delete </a>
+</div>
+{% endfor%}
+
+<br>
+
+
+{{job.id}}
+{% ifequal  error "no" %}
+      <script>
+          alert(" POST ADDED TO PAIDJOB SUCCESSFULLY")
+          window.location=('{% url 'paidjobmepost' %}')
+      </script>
+      {% endifequal %}
+
+       {% ifequal error "yes" %}
+      <script>
+          alert("SOMETHING WENT WRONG"TRY AGAIN")
+          window.location=('{% url 'paidjobmepost' %}')
+      </script>
+      {% endifequal %}

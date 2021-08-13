@@ -1,0 +1,158 @@
+
+{% load static %}
+{% block body %}
+{% include 'navigation.html' %}
+
+<!-- The IMAGE SLIDER PART after navigation bar -->
+<html lang="en">
+<head>
+    <title>JOBMILEGA.ONLINE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 84%;
+  }
+
+  </style>
+
+  <style>
+  /* container width control */
+  .container {
+    max-width: 100%;
+  }
+  </style>
+
+  <style>
+  /* font control */
+  .content {
+    text-align:center;
+    bottom:0;
+    background:rgba(0,0,0,0.5);
+    color:white;
+    height:50px;
+    width:100%;
+
+  }
+  </style>
+</head>
+
+<body>
+
+<div id="demo" class="carousel slide" data-ride="carousel" data-interval="3000">
+
+  <!-- Indicators line present in bottom of the image-->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active ">
+      <img src="static/images/2.jpg" alt="PrimaryImage" width="100" height="100">
+    </div>
+    <div class="carousel-item">
+      <img src="static/images/3.jpg" alt="SecondaryImage" width="100" height="100">
+    </div>
+      <div class="carousel-item">
+      <img src="static/images/loginnn.jpeg" alt="SecondaryImage" width="100" height="100">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+</body>
+</html>
+
+
+<!-- how to add another page with placed student photos -->
+<div class="container" style="background-color:Black ; height:600px ; width:1200px ; margin-top:5">
+  <h1 class="text-center text-white">-------------------| OUR PLACED STUDENTS |-------------------</h1><br>
+
+  <div class="row mt-3">
+    <div class="col-md-3">
+     <img src="static/images/12.png" alt="jobmilega.online" style="width:270px; height:150px ; margin-top:5 ;border-radius:50%">
+      <div class="content">
+        <p>Placed in-Amazon</p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+     <img src="static/images/8.jpg" alt="jobmilega.online" style="width:270px; height:150px ; margin-top:5 ;border-radius:50%">
+      <div class="content">
+        <p>Placed in-Facebook</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+     <img src="static/images/10.jpg" alt="jobmilega.online" style="width:270px; height:150px ; margin-top:5 ;border-radius:50%">
+      <div class="content">
+        <p>Placed in-Google</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+     <img src="static/images/11.jpg" alt="jobmilega.online" style="width:270px; height:150px ; margin-top:5 ;border-radius:50%">
+      <div class="content">
+        <p>Placed in-Flipkart</p>
+      </div>
+    </div>
+  </div>
+    <br>
+    <div class="row mt-3">
+    <div class="col-md-3">
+     <img src="static/images/14.png" alt="jobmilega.online" style="width:270px; height:150px ; margin-top:5 ;border-radius:50%">
+      <div class="content">
+        <p>Placed in-Vayapar</p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+     <img src="static/images/13.jpg" alt="jobmilega.online" style="width:270px; height:150px ; margin-top:5 ;border-radius:50%">
+      <div class="content">
+        <p>Placed in-Capgemimi</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+     <img src="static/images/4.jpg" alt="jobmilega.online" style="width:270px; height:150px ; margin-top:5 ;border-radius:50%">
+      <div class="content">
+        <p>Placed in-LinkedIn</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+     <img src="static/images/7.jpg" alt="jobmilega.online" style="width:270px; height:150px ; margin-top:5 ;border-radius:50%">
+      <div class="content">
+        <p>Placed in-Tesco</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+<br>
+<br>
+
+
+
+{% include 'footer.html' %}
+
+
+
+
+

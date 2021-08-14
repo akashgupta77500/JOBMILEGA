@@ -40,7 +40,9 @@
 
 <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link active" href="{% url 'index'%}"><i class="fa fa-home mr-1 "style="margin-left:10px"></i>HOME</a>
+        <div class="gayeb" >
+      <a class="nav-link active" href="{% url 'index'%}"><i class="fa fa-home mr-1 "></i>HOME</a>
+        </div>
     </li>
     <li class="nav-item">
      <a class="nav-link active" href="{% url 'job'%}"><i class="fa fa-suitcase mr-1 "></i>LATEST JOB</a>
@@ -50,7 +52,7 @@
     <style>
 
 @media screen and (max-width: 1000px) {
-  div.col-sm-3 {
+  div.gayeb {
     display: none;
   }
 }
@@ -66,7 +68,7 @@
         </div>
 
     <!-- Social Media Link -->
-        <div class="col-sm-2 mt-0" style="padding-left : 5% ">
+        <div class="col-sm-3 mt-0" style="padding-left : 5% ">
             <span style="font-weight:bold ; font-size:30px ; color; Red">
                 <span style="color: White">
 
@@ -79,7 +81,7 @@
         </div>
 
     <!-- Profile with image and data -->
-  <div class="card" style="width:100px ; height:80px ; margin-left:0px">
+  <div class="card" style="width:100px ; height:80px ; margin-left:10px">
   <div class="card-body" >
     <a href="{% url 'login'%}" class="btn btn-primary stretched-link" >Login</a>
 

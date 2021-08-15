@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-vpmtr7w0h!@ey(5w7au)!x1if0+mr+twfh#h05oqjp)try-5$0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['jobmilega.online']
+ALLOWED_HOSTS = ['127.0.0.1', 'jobmilega.online']
 
 
 # Application definition

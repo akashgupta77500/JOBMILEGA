@@ -1,3 +1,14 @@
+<style>
+
+@media screen and (max-width: 600px) {
+   nav.navbar {
+    display: none;
+  }
+}
+</style>
+
+
+
 <html>
 <head>
     {% load static %}
@@ -25,6 +36,7 @@
 </style>
 
 </head>
+
 <body>
 
 <!--Navigation Bar-->
@@ -72,7 +84,7 @@
         </div>
 
     <!-- Profile with image and data -->
-  <div class="card" style="width:100px ; height:80px ; margin-left:10px">
+  <div class="card " style="width:100px ; height:80px ; margin-left:10px">
   <div class="card-body" >
     <a href="{% url 'login'%}" class="btn btn-primary stretched-link" >Login</a>
 
@@ -81,6 +93,11 @@
 
 
 </nav>
+<h4 style="background-color:red;color:white;height:28px;margin-top;"> <div class="d-sm-none text-center"> JOBMILEGA.ONLINE </div></h4>
+<div class="d-sm-none text-center" style="margin-top:-5px">ONLY DESKTOP VERSION AVAILABLE</div>
 
 </body>
+
+
 </html>
+

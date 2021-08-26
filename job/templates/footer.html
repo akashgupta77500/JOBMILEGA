@@ -45,14 +45,6 @@
 </style>
 </head>
 
-<style>
-
-@media screen and (max-width: 600px) {
-   div.row {
-    display: none;
-  }
-}
-</style>
 
 <div class="row" style=" ">
   <div class="column">
@@ -67,7 +59,7 @@
     <div class="card">
       <p><i> </i></p>
       <h3> </h3>
-      <h2><a href="{% url 'placedstudent' %}" style="color:black"><b>PLACED STUDENT</b></a></h2>
+      <h2><a href="{% url 'placedstudent' %}" style="color:black;"><b>PLACED STUDENT</b></a></h2>
     </div>
   </div>
 
@@ -101,15 +93,25 @@
       <a href="{% url 'usersignup' %}"style="color:white">Jobseeker Signup</a>
       <a href="{% url 'login' %}"style="color:white">Jobseeker login</a><br>
       <a href="{% url 'recruitersignup' %}"style="color:white">Recruiter Signup</a><br>
-      <a href="{% url 'recruiterlogin' %}"style="color:white">Recruiter Login</a><br><br>
-
+      <a href="{% url 'recruiterlogin' %}"style="color:white">Recruiter Login</a><br>
+      <a href="{% url 'password_reset' %}"style="color:white">Forgot Password ?</a><br><br>
     </div>
     <div class="col-sm-2" style="margin-top:30px;margin-left:30px">
-      <h3>Help</h3><br>
-      <a href="{% url 'interviewquestion' %}"style="color:white">Interview Question</a><br>
-      <a href="{% url 'interviewquestion' %}"style="color:white">Best Youtube Channel</a><br>
-      <a href=""style="color:white">How this website work</a><br>
-      <a href="{% url 'password_reset' %}"style="color:white">Forgot Password ?</a>
+      <h3>Social Media</h3><br>
+      <!-- Social Media Link -->
+
+        <div class="col-sm mt-0 " >
+            <span style="font-weight:bold ; font-size:50px ">
+                <span style="color: White">
+
+                    <i> <a href="https://twitter.com/JOBMILEGAONLINE"class="fa fa-twitter pl-2" style="color: white"></a></i>
+                    <i> <a href=" https://www.linkedin.com/in/job-milega-936838218/"class="fa fa-linkedin pl-2" style="color: white"></a></i>
+                    <i> <a href="https://www.facebook.com/JOBMILEGA.ONLINE/"class="fa fa-facebook pl-2" style="color: white"></a></i>
+                    <i> <a href="https://www.instagram.com/jobmilega.online/"class="fa fa-instagram pl-2" style="color: white"></a></i>
+              </span>
+            </span>
+        </div>
+
 
 
     </div>
@@ -117,18 +119,19 @@
       <h3>Policy</h3><br>
             <a href="{% url 'interviewquestion' %}"style="color:white">Term and conditions</a><br>
       <p></p>
-      <a href="{% url 'grandmaa' %}"style="color:white">GrandMaa House</a><br><br>
-      <a href=""style="color:white">Career</a><br>
+
 
     </div>
     <div class="col-sm-3" style="margin-top:30px;margin-left:10px">
       <h3>Registered Address</h3><br>
       <p> H-No-68, near Pragati Public School, GB Palya, Bengaluru, 560068, India</p>
+
+
     </div>
     <div class="col-sm-2" style="margin-top:30px;margin-left:10px">
       <h3>E-Mail</h3><br>
       <p><a>jobmilegaonline.com</a></p>
-      <h4>Contact No. :</h4>
+      <h3>Contact No. :</h3><br>
       <p><a>+91 7004166578</a></p>
 
     </div>

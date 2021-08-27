@@ -27,14 +27,7 @@
 
  <!--styling,font,color,background change when go to the link-->
 <style>
-.nav-link:hover
-    {
-    color:white !important;
-    font-weight:normal;
-    background-color: grey;
-    border-radius: 20px;
 
-    }
 </style>
 
 </head>
@@ -42,7 +35,7 @@
 <body>
 
 <!--Navigation Bar-->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark"style="background-color:black">
+<nav class="navbar bg-dark navbar-dark"style="background-color:black">
     <!--Navigation Bar content Brand image-->
 
 
@@ -53,9 +46,7 @@
     <!--Navigation Bar content-->
 
 <ul class="navbar-nav"style="margin-left:30px">
-    <li class="nav-item">
-      <a class="nav-link active" href="{% url 'index'%}"><i class="fa fa-home mr-1 "></i>HOME</a>
-    </li>
+
     <li class="nav-item">
      <a class="nav-link active" href="{% url 'job'%}"><i class="fa fa-suitcase mr-1 "></i>LATEST JOB</a>
     </li>
@@ -88,7 +79,7 @@
     <!-- Profile with image and data -->
   <div class="card "style="width:100px ; height:80px ; margin-left:10px">
   <div class="card-body" >
-    <a href="{% url 'login'%}" class="btn btn-primary stretched-link"style="width:auto" >Login</a>
+    <a href="{% url 'login'%}" class="btn btn-primary stretched-link"style="margin-left:-5px">LOGIN</a>
   </div>
  </div>
 

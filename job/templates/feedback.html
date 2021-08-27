@@ -13,48 +13,50 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
  <!--styling,font,color,background change when go to the link-->
-<style>
-.nav-link:hover
-    {
-    color:white !important;
-    font-weight:normal;
-    background-color: grey;
-    border-radius: 20px;
 
-    }
+<style>
+#mydiv {
+  position: absolute;
+  z-index: 9;
+
+}
+
+#mydivheader {
+  padding: 100px;
+  cursor: move;
+  z-index: 10;
+}
 </style>
 
 </head>
 <body>
 
 <!--Navigation Bar-->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark"style="background-color:black">
+<nav class="navbar  bg-dark navbar-dark"style="background-color:black">
     <!--Navigation Bar content Brand image-->
 
-    <div class="col-sm-1 mt-0 " style="padding-right : 20%; ">
-        <button class="btn btn-outline-light text-dark"style="background-color:white"><h1 style="color:black;">FEEDBACK</h1></button>
+    <div class="col-sm-1 mt-0 " style="padding-right : 15%; ">
+      <a href="{% url 'feedback' %}">  <button class="btn btn-outline-light text-dark"style="background-color:white"><h1 style="color:black;">FEEDBACK</h1></button></a>
      </div>
 
 
 
     <!--Navigation Bar content-->
 
-<ul class="navbar-nav">
+<ul class="navbar-nav" style="margin-left:30px">
     <li class="nav-item">
       <a class="nav-link active" href="{% url 'index'%}"><i class="fa fa-home mr-1 "></i>HOME</a>
     </li>
-    <li class="nav-item">
-     <a class="nav-link active" href="{% url 'job'%}"><i class="fa fa-suitcase mr-1 "></i>LATEST JOB</a>
-    </li>
+
   </ul>
     <!-- Navigation bar content heading -->
-       <div class="col-sm-3 mt-0 text-center" style="margin-left:70px" >
+       <h1 class="col-sm-3 mt-0 text-center" style="margin-left:70px" >
               <span style="font-weight:bold ; font-size:30px">
                   <span style="color: White">WORK</span>
                   <span style="color: White">FROM</span>
                   <span style="color: White">HOME</span>
               </span>
-        </div>
+        </h1>
 
     <!-- Social Media Link -->
         <div class="col-sm-3 mt-0" style="padding-left : 5% ">
@@ -106,17 +108,17 @@
 
 <body style="background-color:black;color:white">
 
-<div class="row-sm-7"style="margin-top:5px">
+<div  class="row-sm-7"  style="margin-top:5px">
 
-<div class="row" style="position:fixed; margin-left:780px;margin-top:10px">
+<div   class="row" style=" margin-left:50px;margin-top:10px">
  <form  method="post">
       {% csrf_token %}
      <div class="col-sm-4" style="text-align: center">
      <input  type="text" name="question"  placeholder="NAME" size="70" maxlength="30" required style="text-align: center;;background-color:black;color:white;border: 1px solid white">
      </div>
-     <div class="col-sm" style="text-align: center;">
+     <div  class="col-sm" style="text-align: center;">
 
-     <textarea type="text"   name="answer"  placeholder="FEEDBACK" rows="12" maxlength="79" required style="text-align: center;background-color:black;color:white; width:460px" ></textarea>
+     <textarea type="text"   name="answer"  placeholder="FEEDBACK FOR JOBMILEGA.ONLINE" rows="5" maxlength="79" required style="text-align: center;background-color:black;color:white; width:460px" ></textarea>
       </div>
      <div class="col-sm" style="text-align: center">
      <button type="submit"   class="btn btn-success"  style="background-color: black;color:white;">DONE</button>
@@ -125,16 +127,16 @@
  </div>
 
 
-   <div class="col-sm-7">
+   <div id="mydiv" class="col-sm-7">
   {% for m in material%}
-  <div class="container" style="width:700px;background-color:rgb(255,255,255,0.1);margin-left: 30px;margin-top: 20px;box-shadow: 0px 0px; height:85px;padding: 15px;">
+  <div  id="mydivheader" class="container" style="width:700px;background-color:rgb(255,255,255,0.1);margin-left: 30px;margin-top: 20px;box-shadow: 0px 0px; height:85px;padding: 15px;">
     <a href="">
         <span class="link"></span>
       </a>
     <!--Make a container as button end-->
-    <a href="{% url 'deletefeedback' m.id %}"  class="fa fa-trash-o"  onclick="return confirm('Are you sure? You want to delete this Article!')" style="margin-top:30px;color:rgb(255,255,255,0.0);position:fixed"></a>
+    <a href="{% url 'deletefeedback' m.id %}"  class="fa fa-trash-o"  onclick="return confirm('Are you sure? You want to delete this Article!')" style="margin-top:25px;color:green;position:fixed"></a>
          <p>{{ m.content}} </p>
-         <div class="row">
+         <div  class="row">
       <small ><label style="color:green;margin-left:15px">by-</label> {{ m.title}}</small><small style="margin-left:100px;margin-top:px;">{{ m.date}}</small>
           </div>
    </div>
@@ -143,7 +145,6 @@
    </div>
 
 </div>
-
 
 
 {% ifequal error "no" %}
@@ -170,4 +171,64 @@
 
 
 
+
+
+
+
+<!-- dragable element-->
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+
+
+
+<script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
 

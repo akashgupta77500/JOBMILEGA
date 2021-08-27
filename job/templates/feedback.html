@@ -15,6 +15,8 @@
  <!--styling,font,color,background change when go to the link-->
 
 <style>
+
+
 #mydiv {
   position: absolute;
   z-index: 9;
@@ -35,12 +37,6 @@
 <nav class="navbar  bg-dark navbar-dark"style="background-color:black">
     <!--Navigation Bar content Brand image-->
 
-    <div class="col-sm-1 mt-0 " style="padding-right : 15%; ">
-      <a href="{% url 'feedback' %}">  <button class="btn btn-outline-light text-dark"style="background-color:white"><h1 style="color:black;">FEEDBACK</h1></button></a>
-     </div>
-
-
-
     <!--Navigation Bar content-->
 
 <ul class="navbar-nav" style="margin-left:30px">
@@ -49,17 +45,21 @@
     </li>
 
   </ul>
-    <!-- Navigation bar content heading -->
-       <h1 class="col-sm-3 mt-0 text-center" style="margin-left:70px" >
-              <span style="font-weight:bold ; font-size:30px">
-                  <span style="color: White">WORK</span>
-                  <span style="color: White">FROM</span>
-                  <span style="color: White">HOME</span>
-              </span>
-        </h1>
 
+<ul class="navbar-nav" style="margin-left:0px">
+    <li class="nav-item">
+     <a class="nav-link active" href="{% url 'job'%}"><i class="fa fa-suitcase mr-1 "></i>LATEST JOB</a>
+    </li>
+  </ul>
+    <!-- Navigation bar content heading -->
+
+
+
+      <div class="col-sm-1 mt-0 " >
+      <a href="{% url 'feedback' %}">  <button class="btn btn-outline-light text-dark"style="background-color:white"><h1 style="color:black;">FEEDBACK</h1></button></a>
+     </div>
     <!-- Social Media Link -->
-        <div class="col-sm-3 mt-0" style="padding-left : 5% ">
+        <div class="col-sm-3 mt-0" style="padding-left : 10% ">
             <span style="font-weight:bold ; font-size:30px ; color; Red">
                 <span style="color: White">
 
@@ -134,7 +134,7 @@
         <span class="link"></span>
       </a>
     <!--Make a container as button end-->
-    <a href="{% url 'deletefeedback' m.id %}"  class="fa fa-trash-o"  onclick="return confirm('Are you sure? You want to delete this Article!')" style="margin-top:25px;color:green;position:fixed"></a>
+    <a href="{% url 'deletefeedback' m.id %}"  class="fa fa-trash-o"  onclick="return confirm('Are you sure? You want to delete this Article!')" style="margin-top:25px;color:rgb(255,255,255,0.0);position:fixed"></a>
          <p>{{ m.content}} </p>
          <div  class="row">
       <small ><label style="color:green;margin-left:15px">by-</label> {{ m.title}}</small><small style="margin-left:100px;margin-top:px;">{{ m.date}}</small>

@@ -38,11 +38,51 @@
 
 <div class="row">
 
+     <!--Column1 start here-->
+       <div class="clo-3">
+<div class="box" style="width:340px ; height:300px ; margin-left:160px; margin-top:55;border-radius:100px 100px 100px 0px;">
 
+  <div class="card-body" >
+
+  <!--create a form for login-->
+<div class="container mt-5"></div>
+
+       <!--create a button for Recruiter login and Admin Login start-->
+  <div class="card" style="width:340px ; height:52px ; margin-left:-20px;margin-top:-70px;border-radius:0px 0px 0px 0px;color:white">
+  <div class="card-body" >
+    <button class="btn btn-primary stretched-link" onclick="typeWriter()" style="margin-left:-16px;margin-top:-15px;width:330px">CLICK ME</button>
+<br><br>
+                  <img class="card-img-top" style="width:340px; height:250px ; margin-left:-21px; margin-top:-15px ;border-radius:0%;border-radius:0px 0px 0px 0px;" src="static/images/new.jpg" alt="Card image">
+
+      <p id="demo"></p>
+
+      <script>
+var i = 0;
+var txt = '“The only way to do great work is to love what you do. If you haven’t found it yet, keep looking. Don’t settle.” — Steve Jobs.';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+
+  </div>
+ </div>
+       <!--create a button for Recruiter login and Admin Login End-->
+
+</div>
+  </div>
+ </div>
+    <!--Column1 end here-->
 
         <!--Column2 start here-->
     <div class="clo-3">
-     <div class="card" style="width:340px ; height:450px ; margin-left:500px; margin-top:10px;background-color:black" >
+     <div class="card" style="width:340px ; height:450px ; margin-left:50px; margin-top:10px;background-color:black" >
   <div class="card-body" >
 
   <!--create a form for login-->
@@ -98,6 +138,28 @@
  </div>
     </div>
         <!--Column2 end here-->
+
+    <!--Column3 start here-->
+     <div class="clo-4">
+     <div class="box" style="width:340px ; height:290px ; margin-left:50px; margin-top:65;border-radius:0px 0px 0px 0px;">
+   <div class="card-body" >
+
+ <div class="container mt-5"></div>
+       <!--create a button for Recruiter login and Admin Login start-->
+  <div class="card" style="width:340px ; height:52px ; margin-left:-19px;margin-top:-78px">
+
+  <div class="card-body" >
+    <a href="" class="btn btn-primary stretched-link" style="margin-left:-16px;margin-top:-15px;width:330px">ADMIN</a>
+   <img class="card-img-top" style="width:340px; height:246px ; margin-top:10px; margin-left:-20px;border-radius:0px 0px 0px 0px;" src="static/images/10.jpg" alt="Card image">
+
+   </div>
+  </div>
+       <!--create a button for Recruiter login and Admin Login End-->
+
+</div>
+  </div>
+ </div>
+    <!--Column3 start here-->
 </div>
 
 </body>

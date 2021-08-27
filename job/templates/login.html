@@ -144,9 +144,23 @@
   <div class="card" style="width:340px ; height:52px ; margin-left:-19px;margin-top:-78px">
 
   <div class="card-body" >
-    <a href="" class="btn btn-primary stretched-link" style="margin-left:-16px;margin-top:-15px;width:330px">ADMIN</a>
-   <img class="card-img-top" style="width:340px; height:246px ; margin-top:10px; margin-left:-20px;border-radius:0px 0px 0px 0px;" src="static/images/10.jpg" alt="Card image">
+    <button class="btn btn-primary stretched-link" onclick="typeWriter()" style="margin-left:-16px;margin-top:-15px;width:330px">ADMIN</button>
 
+   <img class="card-img-top" style="width:340px; height:246px ; margin-top:10px; margin-left:-20px;border-radius:0px 0px 0px 0px;" src="static/images/10.jpg" alt="Card image">
+      <p id="demo"></p>
+<script>
+var i = 0;
+var txt = '“Find out what you like doing best and get someone to pay you for doing it.”---KATHARINE WHITEHORN';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
    </div>
   </div>
        <!--create a button for Recruiter login and Admin Login End-->
@@ -165,3 +179,4 @@
 
 
 {% endblock %}
+

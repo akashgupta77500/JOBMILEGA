@@ -15,20 +15,12 @@
 
  <!--styling,font,color,background change when go to the link-->
 <style>
-.nav-link:hover
-    {
-    color:white !important;
-    font-weight:normal;
-    background-color: Grey;
-    border-radius: 20px;
-
-    }
 
  body{background-color: rgb(0,0,0,0.1);}
 
 /* Responsive columns */
 @media screen and (max-width: 1200px) {
-  input.responsive {
+  ul.navbar-nav {
     display: none;
 
   }
@@ -171,7 +163,7 @@ $(document).ready(function(){
  </div>
 
         <!-- Profile with image and data on small screen start-->
-   <div class="profile d-lg-none" style="width:120px ; height:80px ; margin-left:90px">
+   <main class="card d-lg-none" style="width:120px ; height:80px ; margin-left:90px">
      <img class="card-img-top" style="width:119px; height:80px ; margin-top:0px ;border-radius:50%" src="{{student.image.url}}" alt="Card image">
       <div class="card-body" >
         <span href="" class="stretched-link"  data-toggle="modal" data-target="#smallmodal"></span>
@@ -187,7 +179,10 @@ $(document).ready(function(){
            <div class="modal-content">
                   <!-- Modal Header start -->
               <div class="modal-header" >
-                <h2 class="modal-title text-center" style="margin-left:100px">PROFILE</h2>
+      <a class="nav-link active" href="{% url 'video'%}"data-toggle="tooltip" data-placement="bottom" title="Video"><i class="fa fa-tv mr-0" style="font-size:40px;color:white;margin-top:10px"></i></a>
+      <a class="nav-link active" href="{% url 'userstatusbar' %} "data-toggle="tooltip" data-placement="bottom" title="Status of Applied Application"><i class="fa fa-question-circle mr-0 " style="font-size:40px;color:white;margin-top:10px;margin-left:30px"></i></a>
+      <a class="nav-link active" href="{% url 'Logout'%}"data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="fa fa-power-off mr-1 " style="font-size:40px;color:white;margin-top:10px;margin-left:30px"></i></a>
+
                <button type="button" class="close" data-dismiss="modal"style="margin-top:5px">&times;</button>
               </div>
                   <!-- Modal Header  end-->
@@ -254,7 +249,7 @@ $(document).ready(function(){
       <!-- The Modal end-->
 
   </div>
-   </div>
+   </main>
 
         <!-- Profile with image and data small screen  end-->
 

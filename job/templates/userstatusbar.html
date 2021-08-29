@@ -143,19 +143,13 @@ body{margin-top:0px;}
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
     .flex-lg-nowrap .step .step-icon-wrap::before,
     .flex-lg-nowrap .step .step-icon-wrap::after {
         display: none
     }
 }
 
-@media (max-width: 1200px) {
-    .flex-xl-nowrap .step .step-icon-wrap::before,
-    .flex-xl-nowrap .step .step-icon-wrap::after {
-        display: none
-    }
-}
 
 .bg-faded, .bg-secondary {
     background-color: #f5f5f5 !important;
@@ -177,7 +171,7 @@ body{margin-top:0px;}
 {% for i in data1 %}
 
       <a class="nav-link active" href="{% url 'userstatusbar' %}"><i class="fa fa-times-circle" style="font-size:30px; color:black;margin-left:1200px;"></i></a>
-       <a class="active d-lg-none " href="{% url 'userstatusbar' %}"><i class="fa fa-times-circle" style="font-size:30px; color:black;margin-left:820px;"></i></a>
+       <a class="active d-xl-none " href="{% url 'userstatusbar' %}"><i class="fa fa-times-circle" style="font-size:30px; color:black;margin-left:1070px;"></i></a>
 
 <div class="container" style="width:1110px;background-color:rgb(255,255,255,0.9);margin-left: 120px;margin-top:-20px;box-shadow: 0px 0px; height:310px;padding: 15px;border-radius:90px 0px 90px 90px">
 

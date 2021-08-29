@@ -17,17 +17,24 @@
 
  <!--styling,font,color,background change when go to the link-->
 <style>
-.nav-link:hover
-    {
-    color:white !important;
-    font-weight:normal;
-    background-color: Grey;
-    border-radius: 20px;
-
-    }
 
  body{background-color: rgb(0,0,0,0.1);}
 
+/* Responsive columns */
+@media screen and (max-width: 1200px) {
+  ul.navbar-nav {
+    display: none;
+
+  }
+}
+
+/* Responsive columns */
+@media screen and (max-width: 1200px) {
+  div.card {
+    display: none;
+
+  }
+}
 
 </style>
 
@@ -158,6 +165,93 @@
 
   </div>
  </div>
+
+<!-- Profile with image and data on small screen start-->
+   <main class="card d-lg-none" style="width:120px ; height:80px ; margin-left:90px">
+     <img class="card-img-top" style="width:119px; height:80px ; margin-top:0px ;border-radius:50%" src="{{student.image.url}}" alt="Card image">
+      <div class="card-body" >
+        <span href="" class="stretched-link"  data-toggle="modal" data-target="#smallmodal"></span>
+
+       <!-- The Modal start -->
+       <!-- Modal -->
+        <div class="modal fade" id="smallmodal" style="top: 95px;right:70px;bottom: 100px;left: 140px;">
+         <div class="modal-dialog modal-xl" style="width:350px;height:auto;margin-left:480px;margin-top:-20px">
+           <div class="modal-content">
+                  <!-- Modal Header start -->
+              <div class="modal-header" >
+      <a class="nav-link active" href="{% url 'video'%}"data-toggle="tooltip" data-placement="bottom" title="Video"><i class="fa fa-tv mr-0" style="font-size:40px;color:white;margin-top:10px"></i></a>
+      <a class="nav-link active" href="{% url 'userstatusbar' %} "data-toggle="tooltip" data-placement="bottom" title="Status of Applied Application"><i class="fa fa-question-circle mr-0 " style="font-size:40px;color:white;margin-top:10px;margin-left:30px"></i></a>
+      <a class="nav-link active" href="{% url 'Logout'%}"data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="fa fa-power-off mr-1 " style="font-size:40px;color:white;margin-top:10px;margin-left:30px"></i></a>
+
+               <button type="button" class="close" data-dismiss="modal"style="margin-top:5px">&times;</button>
+              </div>
+                  <!-- Modal Header  end-->
+                   <!-- Modal body start -->
+              <div class="modal-body" style="padding:0px 0px">
+
+                                 <!-- FORM IN MODAL START-->
+              <div class="row">
+                <a><img src="{{student.image.url}}" style="width:346px; height:150px ;margin-left:16px" ></a>
+              </div>
+
+                 <div class="text-center" style="font-family:Times New Roman">
+                    <h4><b>{{student.gender}}</b></h4>
+                 </div>
+                  <div class="text-center" style="font-family:Times New Roman">
+                    <h4><b>{{student.type}}</b></h4>
+                 </div>
+                  <div class="text-center" style="font-family:Times New Roman">
+                    <h4><b>{{student.user.first_name}} {{student.user.last_name}}</b></h4>
+                  </div>
+                  <div class="text-center" style="font-family:Times New Roman">
+                    <h4><b>{{student.user.username}}</b></h4>
+                  </div>
+                  <div class="text-center" style="font-family:Times New Roman">
+                    <h4><b>{{student.mobile}}</b></h4>
+                  </div>
+
+
+
+            <!-- FORM IN MODAL END-->
+
+        </div>
+                     <!-- Modal body  end-->
+                   <!-- Modal footer start -->
+
+       <div class="modal-footer">
+        <a href="{% url 'changepassword' %}" class="btn btn-primary" style=" margin-right:px">CHANGE PASSWORD</a>
+        <a href="{% url 'userprofileupdate' %}" class="btn btn-primary">EDIT PROFILE</a>
+       </div>
+                   <!-- Modal footer end -->
+
+<style>
+.modal {
+   top: 95px;
+   right:70px;
+   bottom: 100px;
+   left: 520px;
+}
+  .modal-header{
+    background-color: rgb(200,0,0,0.3);
+    color:white;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-footer {
+    background-color: rgb(0,0,200,0.3);
+  }
+
+ </style>
+
+    </div>
+  </div>
+</div>
+      <!-- The Modal end-->
+
+  </div>
+   </main>
+
+        <!-- Profile with image and data small screen  end-->
 
 
 </nav>

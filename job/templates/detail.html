@@ -18,20 +18,12 @@
  body{background-color: black;}
 
 @media screen and (max-width: 1200px) {
-   div.col-sm-5 {
+   div.card {
     display: none;
   }
 }
 
-    div.scroll   {
-                margin:px, px;
-                padding:px;
-                width: 545px;
-                height: 1200px;
-                overflow-x: hidden;
-                overflow-y: auto;
-                text-align:justify;
-            }
+
 </style>
 
 </head>
@@ -104,11 +96,11 @@
 
 </body>
     </div>
-        <div class="col-sm-5" >
-   <div style="margin-top:px;">
+        <div class="col-lg-5 "style="" >
+   <div >
      <div class="card" style="width:90px ; height:80px ;background-color:black; margin-left:200px;border-radius:50%;">
 
-   <img  style="width:90px; height:80px ; margin-left:px ;border-radius:50%" src="{{student.image.url}}">
+   <img  style="width:90px; height:80px ;border-radius:50%" src="{{student.image.url}}">
       <div class="card-body" >
     <span href="" class="stretched-link"  data-toggle="modal" data-target="#myModal"></span>
 
@@ -188,7 +180,7 @@
 
   </div>
 
-         <div class="container" style="color:white;margin-left:-10px; width:130px;margin-top:0px; border:1px solid grey">
+         <div class="container" style="color:white;margin-left:-10px; width:130px;margin-top:-20px; border:1px solid grey">
    <small>SUGGESTED JOB</small>
          </div>
 
@@ -214,7 +206,7 @@
 <body >
 
 <div class="scroll">
-<div class="container" style="width:500px;background-color:black;color:white;border:1px solid grey;margin-left:20px;margin-top: 120px; height:220px;padding: 15px;">
+<div class="container" style="width:500px;background-color:black;color:white;border:1px solid grey;margin-left:30px;margin-top:20px; height:220px;padding: 15px;">
     <a href="{% url 'detail' i.id %}">
         <span class="link"></span>
       </a>
@@ -230,8 +222,6 @@
 </body>
 
 
-<br>
-
  </div>
         </div>
 
@@ -243,6 +233,8 @@
 </div>
 
 <br>
+
+
 
 
 

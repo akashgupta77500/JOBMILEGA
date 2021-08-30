@@ -37,25 +37,24 @@
 <body>
 
 <!--Navigation Bar-->
-<nav class="navbar bg-dark navbar-dark">
+<nav class="navbar bg-white navbar-dark">
     <!--Navigation Bar content Brand image-->
-    <div class="col-sm-1 mt-0 " style="padding-right : 20% ">
+
         <a href="{% url 'index'%}"><img src="static/images/LOGO.PNG" alt="jobmilega.online" style="width:200px; height:90px"></a>
-        </div>
+
 
     <!--Navigation Bar content-->
-<ul class="navbar-nav">
+<ul class="navbar-nav" style="margin-left:10px">
     <li class="nav-item">
-     <a class="nav-link active" href="{% url 'job'%}"><i class="fa fa-suitcase mr-1 "></i>LATEST JOB</a>
+     <a class="nav-link active" href="{% url 'job'%}"style="color:black"><i class="fa fa-suitcase mr-1 "></i>LATEST JOB</a>
     </li>
   </ul>
-
-        <!-- search bar start-->
-     <form action="/search" method="get" class="small"  >
-      <input type="text" placeholder="Search.." name="search" style="padding:1%;border: 1px solid grey;font-size:17px;margin-left:50px;margin-top:17px;width:380px; border-radius:0px 0px 0px 0px;background-color:black;color:white">
-      <button type="submit" style="padding:1%; width:50px;border:1px solid grey;margin-left:-5px;background-color:black;color:white;font-size:22px;"><i class="fa fa-search"style="margin-bottom:3px" ></i></button>
+    <!-- Search Bar START-->
+     <form action="/search"  method="get" >
+      <input  type="text" placeholder="Search.." name="search" style="padding:1%;border: 1px solid grey;font-size:17px;margin-left:50px;margin-top:17px;width:380px; border-radius:0px 0px 0px 0px;background-color:;color:black">
+      <button type="submit" style="padding:1%; width:50px;border:1px solid grey;margin-left:-5px;background-color:white;color:black;font-size:22px;"><i class="fa fa-search"style="margin-bottom:3px" ></i></button>
     </form>
-       <!-- search bar end-->
+    <!-- Search Bar END-->
 
     <!-- Profile with image and data -->
 
@@ -65,9 +64,6 @@
 
   </div>
  </div>
-
-
-
 </nav>
 </body>
 

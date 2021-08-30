@@ -1,13 +1,18 @@
+
+
+
+
+
 <!--BOTH THE LOGO START-->
  <div class="col-sm-1 mt-0 " style="padding-right:20%:align:center">
         <a href="{% url 'index'%}"><img src="static/images/LOGO.PNG" alt="jobmilega.online" style="width:220px; height:90px"></a>
-       <a  class="stretched-link"> <img class="card-img-top" style="width:170px; height:90px ; margin-left:920px ;border-radius:50%" src="static/images/log.png"></a>
+       <a class="stretched-link"> <img class="card-img-top " style="width:170px; height:90px ; margin-left:900px ;border-radius:50%" src="static/images/log.png"></a>
 
  </div>
 <!--BOTH THE LOGO END-->
 
 <!--3d effect-->
-    <div class="box" style="margin-left:0px;margin-top:-30px">
+    <div class="box" style="margin-left:0px;margin-top:-10px">
   <div class="inner">
      <span>jobmilega.online</span><br>
 
@@ -17,7 +22,11 @@
   </div>
 </div>
      <style>
-
+@media screen and (max-width: 1200px) {
+   a.stretched-link {
+    display: none;
+  }
+}
 
 .box {
 	display: flex;

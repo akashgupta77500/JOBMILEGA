@@ -21,6 +21,16 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
 </script>
+
+<style>
+    @media screen and (max-width: 1200px) {
+   form.small{
+    display: none;
+  }
+}
+
+</style>
+
 </head>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top ">
     <!--Navigation Bar content Brand image-->
@@ -49,10 +59,17 @@ $(document).ready(function(){
 
 
 
-    <form action="/videosearch" method="get"  >
-      <input type="text" placeholder="Search.." name="search" style="padding:8px;border: 1px solid grey;font-size:17px;margin-left:60px;margin-top:10px;width:700px; border-radius:0px 0px 0px 0px;background-color:black;color:white">
+    <form action="/videosearch" method="get" class="small" >
+      <input  type="text" placeholder="Search.." name="search" style="padding:8px;border: 1px solid grey;font-size:17px;margin-left:60px;margin-top:10px;width:700px; border-radius:0px 0px 0px 0px;background-color:black;color:white">
       <button type="submit" style="padding: 8px;border: 1px solid grey;margin-left:-5px;background-color:grey;color:white;font-size:17px;width:70px"><i class="fa fa-search" style="margin-bottom:3px" ></i></button>
     </form>
+
+    <!--for small screen-->
+    <form action="/videosearch" method="get" class="smallscreen d-lg-none" >
+      <input  type="text" placeholder="Search.." name="search" style="padding:8px;border: 1px solid grey;font-size:17px;margin-left:60px;margin-top:10px;width:300px; border-radius:0px 0px 0px 0px;background-color:black;color:white">
+      <button type="submit" style="padding: 8px;border: 1px solid grey;margin-left:-5px;background-color:grey;color:white;font-size:17px;width:70px"><i class="fa fa-search" style="margin-bottom:3px" ></i></button>
+    </form>
+        <!--for small screen-->
 
     <li class="nav-item" style="font-size:40px ; margin-left:50px;margin-top:0px">
       <i class="fa fa-plus mr-1"  data-toggle="modal" data-target="#myModal" style="color: white"></i>
@@ -141,16 +158,16 @@ $(document).ready(function(){
     <button style="border: 1px solid grey;background-color:black;border-radius:50px 50px 50px 50px;margin-left:260px;padding:0px"><a class="nav-link " href="{% url 'todaysearch'%}"><b>Today</b></a></button>
   </li>
   <li class="nav-item">
-    <button style="border: 1px solid grey;background-color:black;border-radius:50px 50px 50px 50px;margin-left:50px;padding:0px"><a class="nav-link " href="{% url 'yesterdaysearch'%}"><b>Yesturday</b></a></button>
+    <button style="border: 1px solid grey;background-color:black;border-radius:50px 50px 50px 50px;margin-left:20px;padding:0px"><a class="nav-link " href="{% url 'yesterdaysearch'%}"><b>Yesturday</b></a></button>
   </li>
   <li class="nav-item">
-    <button style="border: 1px solid grey;background-color:black;border-radius:50px 50px 50px 50px;margin-left:50px;padding:0px"><a class="nav-link " href="{% url 'resumesearch'%}"><b>Resume</b></a></button>
+    <button style="border: 1px solid grey;background-color:black;border-radius:50px 50px 50px 50px;margin-left:20px;padding:0px"><a class="nav-link " href="{% url 'resumesearch'%}"><b>Resume</b></a></button>
   </li>
   <li class="nav-item">
-    <button style="border: 1px solid grey;background-color:black;border-radius:50px 50px 50px 50px;margin-left:50px;padding:0px"><a class="nav-link " href="{% url 'vacancysearch'%}"><b>Vacancy</b></a></button>
+    <button style="border: 1px solid grey;background-color:black;border-radius:50px 50px 50px 50px;margin-left:20px;padding:0px"><a class="nav-link " href="{% url 'vacancysearch'%}"><b>Vacancy</b></a></button>
   </li>
     <li class="nav-item">
-    <button style="border: 1px solid grey;background-color:black;border-radius:50px 50px 50px 50px;margin-left:50px;padding:0px"><a class="nav-link " href="{% url 'myvideo'%}"><b>My Video</b></a></button>
+    <button style="border: 1px solid grey;background-color:black;border-radius:50px 50px 50px 50px;margin-left:20px;padding:0px"><a class="nav-link " href="{% url 'myvideo'%}"><b>My Video</b></a></button>
   </li>
 
 </ul>

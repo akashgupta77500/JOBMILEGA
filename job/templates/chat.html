@@ -1,0 +1,75 @@
+{% load static %}
+<head>
+      <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"  media="screen,projection"/>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/chat.js' %}"></script>
+    </head>
+
+<i style="margin-left:280px;font-size:25px;margin-top:2px;position-fixed;color:black" class="fa fa-video-camera" ></i>
+ <i style="margin-left:30px;font-size:25px;margin-top:2px;position-fixed;color:black" class="fa fa-phone" ></i>
+
+              <script>
+               document.write('<a href="' + document.referrer + '" style="margin-left:700px" ><i style="font-size:25px;margin-top:2px;position-fixed;color:black" class="fa fa-times-circle" ></i></a>');
+               </script>
+
+<div class="section" style="height: 80vh;margin-top:-15px;margin-left: 270px;">
+    <div class="row">
+        <div class="col s9">
+            <div class="card">
+
+                 <div style="background-color:#26a69a;color:white;border-radius:0px 0px 0px 0px;">
+               To : {{receivername.username }}
+                 </div>
+
+            <div id="board" class="section grey lighten-2" style="height: 68vh; padding: 5px; overflow-y: scroll">
+                {% block messages %}
+
+                {% endblock %}
+            </div>
+            <form id="chat-box" class="form-group {% block hide %}hide{% endblock %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col s11">
+                        <div class="input-field">
+                            <input id="id_message" name="message" type="text" placeholder="Type your message..">
+                        </div>
+                    </div>
+                    <div class="col s1" style="line-height: 80px;margin-top:30px;margin-left:-2vh">
+                        <button class="btn btn-floating blue lighten-2 waves-effect waves-light"><i class="material-icons">send</i></button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% load static %}
+    <script src="{% static 'js/chat.js' %}"></script>
+    <script>
+        // For receiving
+        sender_id = "{{ receiver.id }}";
+        receiver_id = "{{ request.user.id }}";
+
+        //For sending
+        $(function () {
+            scrolltoend();
+            $('#chat-box').on('submit', function (event) {
+                event.preventDefault();
+                var message = $('#id_message');
+                send('{{ request.user.username }}', '{{ receiver.username }}', message.val());
+                message.val('');
+            })
+        })
+    </script>
+

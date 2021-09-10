@@ -8,4 +8,4 @@ admin.site.register(Job)
 admin.site.register(Apply)
 admin.site.register(Video)
 admin.site.register(Feedback)
-
+admin.site.register(Message)

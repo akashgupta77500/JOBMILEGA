@@ -176,13 +176,23 @@ body{margin-top:0px;}
 <!--single status part start-->
 {% for i in data1 %}
 
-<div class="row"  style="margin-top:-113px">
-    <button type="button" data-toggle="collapse" data-target="#hidden" style="margin-left:680px;"><img src="{{i.student.image.url}}" style="text-align:center;margin-left:0px;width:70px;height:70px;padding:0px 0px"></button>
+<div class="row"  style="margin-top:-100px">
+    <button type="button" data-toggle="collapse" data-target="#hidden" style="margin-left:680px;"><img src="{{i.job.recruiter.image.url}}" style="text-align:center;margin-left:0px;width:70px;height:70px;padding:0px 0px"></button>
     <div id="hidden" class="collapse">
-        <h6 style="margin-top:5px">{{i.student}}</h6>
-        <h6 >{{i.student.mobile}}</h6>
+        <h6 style="margin-top:5px">{{i.job.recruiter}}</h6>
+        <h6 >{{i.job.recruiter.mobile}}</h6>
     </div>
 </div>
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="width:60px;height:90px ;margin-left:1150px;border-radius:0px 0px 100px 100px;margin-top:-90px">
+    <!--Navigation Bar content Brand image-->
+
+    <!--Navigation Bar content-->
+<ul class="navbar-nav">
+    <li class="nav-item" >
+      <a  href="{% url 'chat' request.user.id i.job.recruiter.user.id %}" id="user{{ i.job.recruiter.id }}"><i class="fa fa-comments-o" style="font-size:40px;margin-left:-3px; color: white"></i></a>
+     </li>
+</ul>
+</nav>
       <a class="nav-link active" href="{% url 'userstatusbar' %}"><i class="fa fa-times-circle" style="font-size:30px; color:black;margin-left:1200px;"></i></a>
        <a class="active d-xl-none " href="{% url 'userstatusbar' %}"><i class="fa fa-times-circle" style="font-size:30px; color:black;margin-left:820px;"></i></a>
 
@@ -624,8 +634,8 @@ How To Join the Interview.
 <br>
 
 <!--TABLE WITH DATA START-->
-        <div class="container" style="width:900px;">
-          <table class="table table-hover" id="example"style="margin-left:-40px;">
+        <div class="container" style="width:1500px;">
+          <table class="table table-hover" id="example">
               <thead>
                   <tr style="background-color: yellow">
                       <th>Sr.No</th>

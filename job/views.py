@@ -734,7 +734,7 @@ def video(request):
                 error = "candidate2"
 
     video=Video.objects.all()
-    d={'video': video,'error': error,'user': user}
+    d={'video': video,'error': error,'user': user,'user1': user1}
     return render(request,'video.html',d)
 
 def addresume(request):
@@ -818,24 +818,13 @@ def message_list(request, sender=None, receiver=None):
         return JsonResponse(serializer.errors, status=400)
 
 def message_view(request, sender, receiver):
-    error = ''
     user = request.user
-    if user:
-        try:
-            user1 = Recruiter.objects.get(user=user)
-            if user1.type == "Recruiter":
-                error = "candidate1"
 
-        except:
-            user1 = StudentUser.objects.get(user=user)
-            if user1.type == "Student":
-                error = "candidate2"
     receivername=User.objects.get(id=receiver)
     if request.method == "GET":
        d= {'users': User.objects.exclude(username=request.user.username),
             'receiver': User.objects.get(id=receiver),
             'messages': Message.objects.filter(sender_id=sender, receiver_id=receiver) |
                         Message.objects.filter(sender_id=receiver, receiver_id=sender),
-           'error' : error,
            'receivername': receivername }
     return render(request, "messages.html",d)

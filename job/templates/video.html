@@ -181,8 +181,9 @@ $(document).ready(function(){
 <video  class="embed-responsive embed-responsive-16by9" controls="controls" poster="{{ i.thumbnail.url }}" style="margin-left:25px; width:250px;height:150px; background-size: 100% 100%">
 <source src="{{i.video.url}}" type="video/mp4" />
 </video>
-    <div style="width:250px;margin-left:25px;background-color:grey;height:auto ">
+    <div style="width:250px;margin-left:25px;background-color:;height:auto;color:white ">
     <h6 style="margin-left:5px;margin-top:0px;color:white;font-size:14px"> {{ i.caption}}</h6>
+        <h6 >{{ i.user}} </h6>
     </div>
 </div>
 {% endfor %}
@@ -191,8 +192,6 @@ $(document).ready(function(){
 
 </body>
 </html>
-
-
 
 
 {% ifequal  error "no" %}

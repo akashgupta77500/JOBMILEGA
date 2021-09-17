@@ -819,7 +819,6 @@ def message_list(request, sender=None, receiver=None):
 
 def message_view(request, sender, receiver):
     user = request.user
-
     receivername=User.objects.get(id=receiver)
     if request.method == "GET":
        d= {'users': User.objects.exclude(username=request.user.username),
@@ -828,3 +827,6 @@ def message_view(request, sender, receiver):
                         Message.objects.filter(sender_id=receiver, receiver_id=sender),
            'receivername': receivername }
     return render(request, "messages.html",d)
+
+def videocalling(request):
+    return render(request, "videocalling.html")
